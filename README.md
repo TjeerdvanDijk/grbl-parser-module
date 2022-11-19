@@ -1,4 +1,4 @@
-I made it so it works as a module. I didn't change any of the code itself. I updated the import in the example below
+I made it so it works as a module. I didn't change any of the code itself, so the test coverage remains the same. I updated the import in the example below
 
 # grbl-parser
 
