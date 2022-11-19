@@ -1,6 +1,6 @@
-# grbl-parser
+I made it so it works as a module. I didn't change any of the code itself. I updated the import in the example below
 
-[![Coverage Status](https://coveralls.io/repos/github/Crazyglue/grbl-parser/badge.svg?branch=master)](https://coveralls.io/github/Crazyglue/grbl-parser?branch=master) [![Build Status](https://travis-ci.org/Crazyglue/grbl-parser.svg?branch=master)](https://travis-ci.org/Crazyglue/grbl-parser)
+# grbl-parser
 
 Grbl machine parser library written in javascript
 
@@ -17,12 +17,15 @@ npm install grbl-parser --save
 ## Usage
 
 ```javascript
-var GrblParser = require("grbl-parser")
-var parser = new GrblParser()
-var myCallback = function(parsedData) {
+import {GrblParser} from "./lib/parser.js";
+
+const grblParser = new GrblParser()
+
+const myCallback = function(parsedData) {
   // do stuff with parsed data (see example status output in Examples section)
 }
-var myString = "<Hold:0|MPos:0.000,0.000,0.000|Bf:15,128|FS:675.5,24000|Ov:120,100,100|WCO:0.000,-5.200,306.351|A:SFM>"
+
+const myString = "<Hold:0|MPos:0.000,0.000,0.000|Bf:15,128|FS:675.5,24000|Ov:120,100,100|WCO:0.000,-5.200,306.351|A:SFM>"
 
 parser.dispatcher.addListener("status", myCallback) // bind myCallback to grbl status reports
 parser.parseData(myString)
